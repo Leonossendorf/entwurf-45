@@ -101,65 +101,176 @@
   <div class="huelle">
     <div class="abschnitt__kopf einblenden">
       <h2 id="h-paro">Parodontitis, in Millimetern erklärt</h2>
-      <p>Zwischen Zahn und Zahnfleisch liegt eine feine Furche. Wird sie tiefer, spricht man von einer Zahnfleischtasche. Wie tief sie ist, misst Ihre Zahnärztin mit einer dünnen Sonde. Probieren Sie es aus.</p>
+      <p>Zwischen Zahn und Zahnfleisch liegt eine feine Furche. Wird sie tiefer, spricht man von einer Zahnfleischtasche. Wie tief sie ist, misst Ihre Zahnärztin mit einer dünnen Sonde. Schieben Sie den Regler und sehen Sie, was sich dabei im Kiefer verändert.</p>
     </div>
 
     <div class="sonde einblenden">
       <div class="sonde__bild">
-        <svg viewBox="0 0 360 470" role="img" aria-labelledby="sonde-titel sonde-desc" id="sonde-svg">
-          <title id="sonde-titel">Schnittbild: Zahn, Zahnfleisch und Knochen mit Messsonde</title>
-          <desc id="sonde-desc">Die Sonde steckt in der Furche zwischen Zahn und Zahnfleisch. Je tiefer die Tasche, desto weiter verschwindet das schwarze Band der Sonde im Zahnfleisch.</desc>
+        <svg viewBox="0 20 520 585" role="img" aria-labelledby="sonde-titel sonde-desc" id="zahn">
+          <title id="sonde-titel">Schnitt durch einen Zahn mit Zahnfleisch, Wurzelhaut und Kieferknochen, daneben eine Messsonde</title>
+          <desc id="sonde-desc">Die Sonde steckt zwischen Zahn und Zahnfleisch. Mit dem Regler unter dem Bild stellen Sie die Messtiefe ein. Bei tiefen Taschen ist das Zahnfleisch gerötet, am Zahn sitzt Zahnstein, und der Knochen ist zurückgegangen.</desc>
           <defs>
-            <pattern id="knochen-muster" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="9" height="9" fill="#EDE5D6"/><path d="M0 0V9" stroke="#D7CBB4" stroke-width="2"/></pattern>
-            <linearGradient id="schmelz" x1="0" x2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EEF1F3"/></linearGradient>
+            <path id="kontur-r" d="M350 132C352 164 340 198 330 222C328 300 310 420 284 506C278 526 268 536 260 536"/>
+            <path id="wurzel" d="M330 222C328 300 310 420 284 506C278 526 268 536 260 536C252 536 242 526 236 506C210 420 196 300 196 222"/>
+            <linearGradient id="g-schmelz" x1="170" y1="40" x2="360" y2="230" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#F6F4EC"/><stop offset="1" stop-color="#DEDACB"/>
+            </linearGradient>
+            <linearGradient id="g-dentin" x1="190" y1="0" x2="335" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#E4D09A"/><stop offset=".35" stop-color="#F0E1B4"/><stop offset=".7" stop-color="#E9D7A4"/><stop offset="1" stop-color="#D3BC84"/>
+            </linearGradient>
+            <linearGradient id="g-pulpa" x1="0" y1="110" x2="0" y2="540" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#DB918A"/><stop offset=".5" stop-color="#CC746E"/><stop offset="1" stop-color="#BC5C57"/>
+            </linearGradient>
+            <linearGradient id="g-gingiva" x1="0" y1="165" x2="0" y2="620" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#F2AEA4"/><stop offset=".22" stop-color="#EA9B91"/><stop offset=".55" stop-color="#E08C84"/><stop offset="1" stop-color="#D57E78"/>
+            </linearGradient>
+            <radialGradient id="g-entz" gradientUnits="userSpaceOnUse" cx="360" cy="220" r="120">
+              <stop offset="0" stop-color="#B02A24" stop-opacity=".95"/><stop offset=".45" stop-color="#C2413A" stop-opacity=".6"/><stop offset="1" stop-color="#C2413A" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="g-metall" x1="-4.5" y1="0" x2="4.5" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#5E6A74"/><stop offset=".3" stop-color="#EEF3F6"/><stop offset=".55" stop-color="#A9B4BC"/><stop offset="1" stop-color="#4E5A64"/>
+            </linearGradient>
+            <linearGradient id="g-griff" x1="0" y1="-7" x2="0" y2="7" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#5E6A74"/><stop offset=".3" stop-color="#EEF3F6"/><stop offset=".55" stop-color="#A9B4BC"/><stop offset="1" stop-color="#4E5A64"/>
+            </linearGradient>
+            <linearGradient id="g-aus" x1="0" y1="540" x2="0" y2="606" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/>
+            </linearGradient>
+            <mask id="m-aus" maskUnits="userSpaceOnUse" x="0" y="0" width="520" height="620"><rect width="520" height="620" fill="url(#g-aus)"/></mask>
+            <filter id="f-mark" filterUnits="userSpaceOnUse" x="0" y="0" width="520" height="620" color-interpolation-filters="sRGB">
+              <feTurbulence type="fractalNoise" baseFrequency="0.082 0.06" numOctaves="2" seed="23"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0.85  0 0 0 0 0.68  0 0 0 0 0.57  0 0 0 15 -7.5"/>
+              <feComposite in2="SourceGraphic" operator="in"/>
+            </filter>
+            <filter id="f-weich" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/></filter>
+            <filter id="f-weich2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+            <clipPath id="c-knochen"><path id="kn-clip"/></clipPath>
+            <clipPath id="c-pdl"><polygon id="pdl-clip" points="0,266 520,266 520,620 0,620"/></clipPath>
+            <clipPath id="c-zahn"><path d="M196 222C186 196 174 160 178 128C182 88 196 54 214 50C232 46 248 66 262 80C276 66 294 50 312 54C332 58 346 96 350 132C352 164 340 198 330 222C328 300 310 420 284 506C278 526 268 536 260 536C252 536 242 526 236 506C210 420 196 300 196 222Z"/></clipPath>
+            <clipPath id="c-gin-r"><path id="gin-r-clip"/></clipPath>
           </defs>
-          <!-- Zahnfleisch -->
-          <path id="zahnfleisch" d="M181 158C190 148 214 146 232 150C270 158 320 166 360 164V470H150C165 380 178 260 181 158Z" fill="#E7A9A0"/>
-          <path id="zahnfleisch-links" d="M0 164C30 166 60 160 84 150C82 210 86 300 110 470H0Z" fill="#E7A9A0"/>
-          <!-- Knochen -->
-          <path id="knochen" d="M0 300H360V470H0Z" fill="url(#knochen-muster)"/>
-          <!-- Zahn -->
-          <path d="M82 172C76 130 66 92 74 62C82 34 104 24 120 30C128 34 134 34 142 30C158 22 182 30 188 60C196 92 186 130 180 172C182 260 168 360 140 452C136 462 126 462 122 452C96 360 82 260 82 172Z" fill="url(#schmelz)" stroke="#8A97A2" stroke-width="2"/>
-          <path d="M82 172C110 178 152 178 180 172" fill="none" stroke="#B8C1C8" stroke-width="1.5" stroke-dasharray="4 4"/>
-          <!-- Tasche -->
-          <path id="tasche" d="M183 170V210" stroke="#7C2E26" stroke-width="5" stroke-linecap="round"/>
-          <!-- Sonde -->
-          <g id="sonde">
-            <line id="sonde-schaft" x1="189" y1="0" x2="189" y2="214" stroke="#5E6B75" stroke-width="5" stroke-linecap="round"/>
-            <rect id="sonde-band" x="185.5" y="100" width="7" height="44" fill="#111"/>
-            <rect id="sonde-ring1" x="185.5" y="60" width="7" height="3" fill="#111"/>
-            <rect id="sonde-ring2" x="185.5" y="40" width="7" height="3" fill="#111"/>
-            <circle id="sonde-spitze" cx="189" cy="214" r="4.5" fill="#5E6B75"/>
+
+          <g mask="url(#m-aus)">
+            <!-- Zahnfleisch links (gesund) und rechts (veränderlich) -->
+            <path id="gin-l" d="M181 176C179 167 165 168 157 186C151 212 150 244 143 286C132 350 98 440 78 620L262 620L262 176Z" fill="url(#g-gingiva)"/>
+            <path id="gin-r" fill="url(#g-gingiva)"/>
+            <g clip-path="url(#c-gin-r)"><circle id="entz" cx="360" cy="220" r="120" fill="url(#g-entz)" opacity="0"/></g>
+            <!-- Lichtkante außen -->
+            <path d="M181 176C179 167 165 168 157 186C151 212 150 244 143 286C132 350 98 440 78 620" fill="none" stroke="#B9655E" stroke-width="1.1" opacity=".75"/>
+            <path d="M161 196C156 218 155 246 148 286C138 348 106 440 86 610" fill="none" stroke="#FFD9D2" stroke-width="5" opacity=".55" filter="url(#f-weich)"/>
+            <path id="gin-r-kante" fill="none" stroke="#B9655E" stroke-width="1.1" opacity=".75"/>
+            <path id="gin-r-licht" fill="none" stroke="#FFD9D2" stroke-width="5" opacity=".5" filter="url(#f-weich)"/>
+
+            <!-- Kieferknochen -->
+            <path id="kn" fill="#F1E8D3"/>
+            <path id="kn-mark" fill="#000" filter="url(#f-mark)"/>
+            <g clip-path="url(#c-knochen)">
+              <path id="kn-rand" fill="none" stroke="#F4ECDA" stroke-width="15" stroke-linejoin="round"/>
+              <path id="kn-rand2" fill="none" stroke="#C9B994" stroke-width="2.2" stroke-linejoin="round" opacity=".9"/>
+            </g>
+            <path id="kn-alt" fill="none" stroke="#6F6652" stroke-width="1.3" stroke-dasharray="4 3.5" opacity="0"/>
+
+            <!-- Wurzelhaut mit Fasern -->
+            <g clip-path="url(#c-pdl)">
+              <use href="#wurzel" fill="none" stroke="#F5CEC5" stroke-width="12.5"/>
+              <use href="#wurzel" fill="none" stroke="#C0766B" stroke-width="11.5" stroke-dasharray="1 4.4" opacity=".85"/>
+            </g>
+
+            <!-- Zahn: Zahnbein, Zement, Nerv, Schmelz -->
+            <path d="M196 222C186 196 174 160 178 128C182 88 196 54 214 50C232 46 248 66 262 80C276 66 294 50 312 54C332 58 346 96 350 132C352 164 340 198 330 222C328 300 310 420 284 506C278 526 268 536 260 536C252 536 242 526 236 506C210 420 196 300 196 222Z" fill="url(#g-dentin)"/>
+            <g clip-path="url(#c-zahn)">
+              <!-- feine Kanälchen im Zahnbein -->
+              <g fill="none" stroke="#C7AE74" stroke-width=".6" opacity=".5">
+                <path d="M236 150C222 148 208 142 198 132M234 172C220 174 206 174 196 170M236 198C224 204 210 210 198 214M240 250C226 258 212 264 200 268M246 310C234 318 222 324 206 328M252 370C242 378 230 384 216 388M256 430C248 438 238 444 228 448"/>
+                <path d="M288 150C302 148 316 142 328 134M290 174C304 176 318 176 332 172M288 200C300 206 314 212 328 216M284 252C298 260 312 266 324 270M278 312C290 320 302 326 316 330M272 372C282 380 294 386 304 390M266 432C274 440 284 446 292 450"/>
+              </g>
+              <use href="#wurzel" fill="none" stroke="#BFA468" stroke-width="5" opacity=".9"/>
+              <use href="#wurzel" fill="none" stroke="#8E7A4C" stroke-width="1" opacity=".55"/>
+            </g>
+            <path d="M240 122C245 126 250 136 262 136C274 136 279 127 284 123C289 130 286 150 283 172C280 200 275 236 272 296C269 380 264 470 261.5 530L258.5 530C256 470 251 380 248 296C245 236 240 200 237 172C234 150 235 130 240 122Z" fill="url(#g-pulpa)" stroke="#A85550" stroke-width=".7"/>
+            <g fill="none" stroke-linecap="round">
+              <path d="M259.6 524C257.5 440 254.5 350 253.5 296C252 240 248 200 246 170C245 152 244 140 243 131" stroke="#8E1F1B" stroke-width="1.1" opacity=".75"/>
+              <path d="M253.5 296C251 270 248 256 247 240" stroke="#8E1F1B" stroke-width=".7" opacity=".6"/>
+              <path d="M260.6 524C262.5 440 265.5 350 266.5 296C268 240 272 200 275 170C276 152 278 140 280 131" stroke="#4E5F9A" stroke-width="1.1" opacity=".7"/>
+              <path d="M267.5 270C270 250 273 236 274 218" stroke="#4E5F9A" stroke-width=".7" opacity=".6"/>
+              <path d="M260 526C260 440 260 350 260 296C260 240 261 200 261 148" stroke="#E7C56B" stroke-width="1" opacity=".8"/>
+            </g>
+            <path d="M196 222C186 196 174 160 178 128C182 88 196 54 214 50C232 46 248 66 262 80C276 66 294 50 312 54C332 58 346 96 350 132C352 164 340 198 330 222C332 198 336 162 332 136C328 108 316 92 300 90C286 88 272 100 262 108C252 100 240 88 226 86C212 84 200 104 196 134C190 160 194 196 196 222Z" fill="url(#g-schmelz)"/>
+            <path d="M196 222C194 196 190 160 196 134C200 104 212 84 226 86C240 88 252 100 262 108C272 100 286 88 300 90C316 92 328 108 332 136C336 162 332 198 330 222" fill="none" stroke="#B9AE8B" stroke-width="1" opacity=".8"/>
+            <path d="M190 120C192 92 202 66 214 60" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".9" filter="url(#f-weich)"/>
+            <path d="M196 222C186 196 174 160 178 128C182 88 196 54 214 50C232 46 248 66 262 80C276 66 294 50 312 54C332 58 346 96 350 132C352 164 340 198 330 222" fill="none" stroke="#8F8A78" stroke-width="1.2"/>
+            <!-- gesunde Furche links -->
+            <path d="M182 176C184 188 187 198 190 207" fill="none" stroke="#A8504A" stroke-width="1.2" stroke-linecap="round"/>
+
+            <!-- Tasche rechts: Rand, Zahnstein, Sonde -->
+            <path id="tasche-rand" fill="none" stroke="#A8504A" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+            <g id="stein"></g>
+            <g id="sonde">
+              <path d="M0 -352C2 -376 16 -396 40 -412L150 -482" fill="none" stroke="#6A7680" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M0 -352C2 -376 16 -396 40 -412L150 -482" fill="none" stroke="#DCE4E9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+              <polygon points="-2.3,-3 2.3,-3 4.2,-354 -4.2,-354" fill="url(#g-metall)"/>
+              <polygon points="-2.75,-77 2.75,-77 3,-121 -3,-121" fill="#16191C"/>
+              <polygon points="-0.9,-78 0.1,-78 0.2,-120 -1,-120" fill="#5A6066" opacity=".8"/>
+              <rect x="-3.5" y="-189" width="7" height="3.4" fill="#16191C"/>
+              <rect x="-3.9" y="-255" width="7.8" height="3.4" fill="#16191C"/>
+              <circle r="5.5" fill="#8A959E"/>
+              <circle r="5.5" fill="url(#g-metall)" opacity=".9"/>
+              <circle cx="-1.6" cy="-1.8" r="1.7" fill="#fff" opacity=".85"/>
+            </g>
           </g>
-          <!-- Schleier: Teil der Sonde im Zahnfleisch -->
-          <rect id="schleier" x="182" y="170" width="20" height="40" fill="#E7A9A0" opacity=".72"/>
-          <!-- Maßlinie -->
-          <g font-family="Plex, Consolas, monospace" font-size="12" fill="#4A5864">
-            <line x1="236" y1="170" x2="300" y2="170" stroke="#4A5864" stroke-dasharray="3 3"/>
-            <text x="238" y="132">Zahnfleischrand</text>
-            <line x1="252" y1="137" x2="262" y2="167" stroke="#4A5864"/>
-            <line id="mass-linie" x1="292" y1="170" x2="292" y2="214" stroke="#0E2236" stroke-width="1.5"/>
-            <line x1="286" y1="170" x2="298" y2="170" stroke="#0E2236" stroke-width="1.5"/>
-            <line id="mass-ende" x1="286" y1="214" x2="298" y2="214" stroke="#0E2236" stroke-width="1.5"/>
-            <text id="mass-text" x="304" y="196" fill="#0E2236" font-size="14">2 mm</text>
-            <text x="16" y="440">Knochen</text>
-            <text x="112" y="104" fill="#8A97A2">Zahn</text>
+
+          <!-- Beschriftung links -->
+          <g class="z-links" font-family="Atkinson, system-ui, sans-serif" font-size="14" fill="#1B2731">
+            <g stroke="#4A5864" stroke-width=".9" fill="none">
+              <path d="M92 92H184"/><path d="M70 146L210 162"/><path d="M70 204H250"/><path d="M92 262H148"/><path d="M84 340H194"/><path d="M104 400H150"/>
+            </g>
+            <g fill="#0E2236">
+              <circle cx="184" cy="92" r="2.4"/><circle cx="210" cy="162" r="2.4"/><circle cx="250" cy="204" r="2.4"/><circle cx="148" cy="262" r="2.4"/><circle cx="194" cy="340" r="2.4"/><circle cx="150" cy="400" r="2.4"/>
+            </g>
+            <text x="6" y="97">Zahnschmelz</text>
+            <text x="6" y="151">Zahnbein</text>
+            <text x="6" y="209">Zahnnerv</text>
+            <text x="6" y="267">Zahnfleisch</text>
+            <text x="6" y="345">Wurzelhaut</text>
+            <text x="6" y="405">Kieferknochen</text>
+          </g>
+
+          <!-- Maß rechts -->
+          <g font-family="Atkinson, system-ui, sans-serif" fill="#0E2236">
+            <line id="rand-linie" x1="380" y1="174" x2="418" y2="174" stroke="#4A5864" stroke-width="1" stroke-dasharray="3 3"/>
+            <text id="rand-text" x="398" y="164" font-size="14" fill="#1B2731">Zahnfleischrand</text>
+            <g id="mass" stroke="#0E2236" stroke-width="1.6" fill="none"></g>
+            <text id="mass-text" x="430" y="200" font-size="19" font-weight="700" font-family="Manrope, system-ui, sans-serif">2,0 mm</text>
+            <g id="kn-hinweis" opacity="0">
+              <path id="kn-zeiger" fill="none" stroke="#4A5864" stroke-width=".9"/>
+              <text id="kn-text" x="426" y="300" font-size="14" fill="#1B2731">Knochenabbau</text>
+            </g>
           </g>
         </svg>
+        <ul class="sonde__legende" aria-hidden="true">
+          <li><i style="background:#F3F1E7;border:1px solid #B9AE8B"></i>Zahnschmelz</li>
+          <li><i style="background:#E9D7A4"></i>Zahnbein</li>
+          <li><i style="background:#C5645F"></i>Zahnnerv</li>
+          <li><i style="background:#EA9B91"></i>Zahnfleisch</li>
+          <li><i style="background:#F5CEC5;border:1px solid #C0766B"></i>Wurzelhaut</li>
+          <li><i style="background:#EADFC6;border:1px solid #C9B994"></i>Kieferknochen</li>
+        </ul>
         <div class="sonde__regler">
           <label for="tiefe">Messtiefe <output id="tiefe-wert" for="tiefe">2,0 mm</output></label>
           <input type="range" id="tiefe" min="1" max="8" step="0.5" value="2" aria-describedby="befund">
           <div class="sonde__stufen" aria-hidden="true"><span style="left:0">1 mm</span><span style="left:35.7%">3,5</span><span style="left:64.3%">5,5</span><span style="left:100%">8 mm</span></div>
+          <button class="knopf knopf--hell sonde__spiel" type="button" id="verlauf" aria-pressed="false">Verlauf abspielen</button>
         </div>
       </div>
       <div class="sonde__text">
         <div class="befund" id="befund" data-stufe="1" aria-live="polite">
           <span class="code" data-code>PSI-Code 0 bis 2</span>
-          <h3 data-titel>Gesunde Furche</h3>
-          <p data-text>Bis etwa 3 Millimeter ist normal. Das schwarze Band der Sonde bleibt ganz sichtbar.</p>
+          <h3 data-titel>Gesundes Zahnfleisch</h3>
+          <p data-text>Bis etwa 3 Millimeter ist normal. Das Zahnfleisch liegt fest am Zahn, das schwarze Band der Sonde bleibt über dem Rand sichtbar.</p>
         </div>
+        <p>Die Sonde hat eine kleine Kugel an der Spitze und ein schwarzes Band zwischen 3,5 und 5,5 Millimetern. Daran liest Ihre Zahnärztin ab, wie tief die Furche ist.</p>
         <p>Diese Messung heißt Parodontaler Screening-Index (PSI). Gesetzlich Versicherte haben alle zwei Jahre Anspruch darauf. Gemessen wird an allen Zähnen, notiert wird der höchste Wert je Kieferabschnitt.</p>
-        <p class="quelle">Grundlage: Behandlungsrichtlinie des Gemeinsamen Bundesausschusses und BEMA-Nr. 04 (Stand 2021).</p>
+        <p class="quelle">Schnittbild maßstäblich vereinfacht. Grundlage: Behandlungsrichtlinie des Gemeinsamen Bundesausschusses und BEMA-Nr. 04 (Stand 2021).</p>
       </div>
     </div>
 
@@ -172,7 +283,7 @@
       <li><b>Lockere Zähne</b>oder Lücken, die neu entstehen</li>
     </ul>
 
-    <div class="ablauf einblenden">
+    <div class="ablauf einblenden" id="ablauf">
       <h3>So läuft die Behandlung ab</h3>
       <p class="klein">Seit Juli 2021 ist die systematische Behandlung für gesetzlich Versicherte in festen Schritten geregelt.</p>
       <ol class="schritte">
@@ -196,25 +307,44 @@
   <div class="huelle">
     <div class="abschnitt__kopf einblenden">
       <h2 id="h-termin">Termin und Sprechzeiten</h2>
-      <p>Einen Termin zur Kontrolle buchen Sie rund um die Uhr online. Kommen Sie mit einer Überweisung, planen wir den ersten Termin am Telefon mit Ihnen.</p>
+      <p>Einen Termin zur Kontrolle buchen Sie rund um die Uhr online. Beantworten Sie drei kurze Fragen, dann sehen Sie Ihren Weg Schritt für Schritt.</p>
     </div>
     <div class="termin">
-      <div class="karte online einblenden">
-        <h3>Online buchen, auch abends und am Wochenende</h3>
-        <p>Die Praxis vergibt Termine über CLICKDOC. So kommen Sie in vier Schritten ans Ziel:</p>
-        <ol>
-          <li><span>Frage „Sind Sie in dieser Einrichtung bereits in Behandlung?“: <span class="wahl">Ja</span> oder <span class="wahl">Nein</span></span></li>
-          <li><span>Art der Behandlung: <span class="wahl">Vor-Ort-Termin</span>, Fachgebiet <span class="wahl">Zahnarzt</span></span></li>
-          <li><span>Terminart wählen, zum Beispiel <span class="wahl">Kontrolluntersuchung</span></span></li>
-          <li><span>Freie Uhrzeit antippen, Ihre Daten eintragen, fertig. Die Bestätigung kommt per E-Mail.</span></li>
-        </ol>
-        <a class="knopf" href="https://clickdoc.de/appointmentbooking/arzt/Steinfurt/Zahnarzt/Dr-Christina-Elberg/787c7630-2cb7-417e-ade1-58a69722e612" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-kal"/></svg>Termin online buchen</a>
-        <div class="mitueberweisung">
-          <h3>Mit Überweisung zur Parodontitis-Behandlung</h3>
-          <p>Bitte rufen Sie uns an, damit die Anmeldung für den ersten Termin genug Zeit einplant. Bringen Sie die Überweisung, Ihre Versichertenkarte und eine Liste Ihrer Medikamente mit.</p>
-          <a class="tel" href="tel:+4925521550">02552 1550</a>
+      <div class="karte fallwahl einblenden" id="fallwahl">
+        <h3>Welcher Weg passt zu Ihnen?</h3>
+        <p class="klein">Tippen Sie Ihre Antworten an. Danach sehen Sie nur die Schritte, die für Sie gelten.</p>
+
+        <fieldset class="fall-frage" data-frage="anliegen">
+          <legend><span class="fall-nr">1</span>Worum geht es?</legend>
+          <div class="chips">
+            <label><input type="radio" name="fall-anliegen" value="kontrolle"><span>Kontrolle oder Vorsorge</span></label>
+            <label><input type="radio" name="fall-anliegen" value="ueberweisung"><span>Behandlung mit Überweisung</span></label>
+            <label><input type="radio" name="fall-anliegen" value="schmerz"><span>Akute Schmerzen</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fall-frage" data-frage="besuch" hidden>
+          <legend><span class="fall-nr">2</span>Waren Sie schon einmal bei uns in Behandlung?</legend>
+          <div class="chips">
+            <label><input type="radio" name="fall-besuch" value="ja"><span>Ja</span></label>
+            <label><input type="radio" name="fall-besuch" value="nein"><span>Nein, ich bin neu</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fall-frage" data-frage="konto" hidden>
+          <legend><span class="fall-nr">3</span>Haben Sie ein Konto bei CLICKDOC?</legend>
+          <div class="chips">
+            <label><input type="radio" name="fall-konto" value="mit"><span>Ja</span></label>
+            <label><input type="radio" name="fall-konto" value="ohne"><span>Nein, oder ich weiß es nicht</span></label>
+          </div>
+        </fieldset>
+
+        <div class="fall-ergebnis" id="fall-ergebnis" aria-live="polite" hidden>
+          <p><span class="mono">Ihre Anleitung</span><strong data-fall-titel></strong><span data-fall-zahl></span></p>
+          <a class="knopf" href="#anleitung">Zur Anleitung</a>
         </div>
       </div>
+
       <div class="einblenden">
         <div class="karte" id="anfahrt">
           <h3>Sprechzeiten</h3>
@@ -235,13 +365,183 @@
             <dt>Route</dt><dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Kolpingstra%C3%9Fe+1%2C+48565+Steinfurt" rel="noopener">Route in Google Maps öffnen</a></dd>
           </dl>
         </div>
-        <div class="notdienst">
+        <div class="notdienst" id="notdienst">
           <h3>Zahnärztlicher Notdienst</h3>
           <p>Außerhalb der Sprechzeiten nennt Ihnen die zentrale Nummer die Praxis, die gerade Dienst hat:</p>
           <p><a class="tel" href="tel:+491805986700">01805 98 67 00</a> <span class="klein">(14 ct/Min. aus dem Festnetz)</span></p>
           <p class="klein"><a href="https://www.zahnaerzte-wl.de/pages/notdienstsuche" rel="noopener">Notdienst online suchen</a> · Bei Lebensgefahr: <a href="tel:112">112</a></p>
         </div>
       </div>
+    </div>
+
+    <div class="anleitung" id="anleitung" tabindex="-1" hidden>
+      <div class="anleitung__kopf">
+        <h3 data-anleitung-titel>Ihre Anleitung</h3>
+        <button class="knopf knopf--hell" type="button" id="fall-neu">Antworten ändern</button>
+      </div>
+
+      <ol class="schritte-liste">
+
+        <!-- ===== Kontrolle online ===== -->
+        <li class="schritt" data-fall="kontrolle">
+          <div class="schritt__text">
+            <h4>CLICKDOC öffnen</h4>
+            <p><strong>Lesen Sie bitte erst alle Schritte bis zum Ende.</strong> Der Knopf öffnet die Buchung in einem neuen Fenster, diese Anleitung sehen Sie dann nicht mehr.</p>
+            <p><a class="knopf" href="https://clickdoc.de/appointmentbooking/arzt/Steinfurt/Zahnarzt/Dr-Christina-Elberg/787c7630-2cb7-417e-ade1-58a69722e612" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-kal"/></svg>CLICKDOC öffnen<span class="sr"> (öffnet ein neues Fenster)</span></a></p>
+            <p>Erscheint ein Hinweis zu Cookies, tippen Sie auf <b class="taste">NUR NOTWENDIGE</b>. Buchen können Sie trotzdem.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/cookie.webp" type="image/webp"><img src="img/anleitung/cookie.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: Cookie-Hinweis von CLICKDOC, der Knopf „NUR NOTWENDIGE“ ist markiert."></picture></figure>
+        </li>
+
+        <li class="schritt" data-fall="kontrolle ja">
+          <div class="schritt__text">
+            <h4>Die erste Frage mit „Ja“ beantworten</h4>
+            <p>CLICKDOC fragt: „Sind Sie in dieser Einrichtung bereits in Behandlung?“ Tippen Sie auf <b class="taste">Ja</b>.</p>
+            <p class="klein">Gemeint ist die Person, die zum Termin kommt, also zum Beispiel auch Ihr Kind.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/frage-ja.webp" type="image/webp"><img src="img/anleitung/frage-ja.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: Frage „Sind Sie in dieser Einrichtung bereits in Behandlung?“, der Knopf „Ja“ ist markiert."></picture></figure>
+        </li>
+
+        <li class="schritt" data-fall="kontrolle nein">
+          <div class="schritt__text">
+            <h4>Die erste Frage mit „Nein“ beantworten</h4>
+            <p>CLICKDOC fragt: „Sind Sie in dieser Einrichtung bereits in Behandlung?“ Tippen Sie auf <b class="taste">Nein</b>.</p>
+            <p class="klein">Gemeint ist die Person, die zum Termin kommt, also zum Beispiel auch Ihr Kind.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/frage-nein.webp" type="image/webp"><img src="img/anleitung/frage-nein.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: Frage „Sind Sie in dieser Einrichtung bereits in Behandlung?“, der Knopf „Nein“ ist markiert."></picture></figure>
+        </li>
+
+        <li class="schritt" data-fall="kontrolle">
+          <div class="schritt__text">
+            <h4>„Vor-Ort-Termin“ antippen</h4>
+            <p>Darunter erscheint die nächste Zeile: „Bitte wählen Sie die Art der Behandlung“. Tippen Sie auf <b class="taste">Vor-Ort-Termin</b>.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/art.webp" type="image/webp"><img src="img/anleitung/art.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: Auswahl der Behandlungsart, „Vor-Ort-Termin“ ist markiert."></picture></figure>
+        </li>
+
+        <li class="schritt" data-fall="kontrolle">
+          <div class="schritt__text">
+            <h4>„Zahnarzt“ antippen</h4>
+            <p>Bei „Bitte wählen Sie das Fachgebiet“ tippen Sie auf <b class="taste">Zahnarzt</b>.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/fach.webp" type="image/webp"><img src="img/anleitung/fach.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: Auswahl des Fachgebiets, „Zahnarzt“ ist markiert."></picture></figure>
+        </li>
+
+        <li class="schritt" data-fall="kontrolle">
+          <div class="schritt__text">
+            <h4>„Kontrolluntersuchung“ antippen</h4>
+            <p>Bei „Bitte wählen Sie die Terminart“ tippen Sie auf <b class="taste">Kontrolluntersuchung</b>.</p>
+            <p class="klein">Online gibt es bei uns diese eine Terminart. Für alles andere erreichen Sie uns unter <a href="tel:+4925521550">02552 1550</a>.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/terminart.webp" type="image/webp"><img src="img/anleitung/terminart.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: Auswahl der Terminart, „Kontrolluntersuchung“ ist markiert."></picture></figure>
+        </li>
+
+        <li class="schritt" data-fall="kontrolle">
+          <div class="schritt__text">
+            <h4>Tag und Uhrzeit wählen</h4>
+            <p>Wischen Sie nach unten bis zu einem Tag mit blauen Uhrzeiten und tippen Sie auf die Uhrzeit, die Ihnen passt.</p>
+            <p class="klein">Ein Strich unter einem Tag bedeutet: Online ist dort nichts frei. Der erste freie Termin kann einige Wochen entfernt sein.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/zeit.webp" type="image/webp"><img src="img/anleitung/zeit.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: Kalender mit freien Uhrzeiten, eine Uhrzeit ist markiert."></picture></figure>
+        </li>
+
+        <li class="schritt" data-fall="kontrolle ohne">
+          <div class="schritt__text">
+            <h4>„Kostenlos registrieren“ antippen</h4>
+            <p>CLICKDOC zeigt Ihren Termin und oben den Hinweis „Ihr Termin ist noch nicht vereinbart“. Das ist richtig so: Zum Abschließen brauchen Sie ein kostenloses Konto. Tippen Sie auf <b class="taste">Kostenlos registrieren</b>.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/konto-neu.webp" type="image/webp"><img src="img/anleitung/konto-neu.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: Termindetails, darunter der gelbe Knopf „Kostenlos registrieren“, markiert."></picture></figure>
+        </li>
+
+        <li class="schritt" data-fall="kontrolle ohne">
+          <div class="schritt__text">
+            <h4>Ihre Angaben eintragen</h4>
+            <p>Tragen Sie Vorname, Nachname, Geburtstag, E-Mail-Adresse und Geschlecht ein. Dann wählen Sie ein Passwort und tippen es zweimal ein.</p>
+            <p class="klein"><strong>Das Passwort braucht:</strong> mindestens 10 Zeichen, große und kleine Buchstaben, eine Zahl und ein Sonderzeichen, zum Beispiel ein Ausrufezeichen.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/registrieren-1.webp" type="image/webp"><img src="img/anleitung/registrieren-1.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: Formular „Erstellen Sie jetzt Ihren CLICKDOC Account“ mit den Feldern Vorname, Nachname, Geburtstag und E-Mail-Adresse."></picture></figure>
+        </li>
+
+        <li class="schritt" data-fall="kontrolle ohne">
+          <div class="schritt__text">
+            <h4>Haken setzen, dann „REGISTRIEREN“</h4>
+            <p>Unter den Feldern steht „Ich willige ein, dass meine Gesundheitsdaten …“. Setzen Sie dort den Haken, ohne ihn bleibt der Knopf grau. Tippen Sie dann auf <b class="taste">REGISTRIEREN</b>.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/registrieren-2.webp" type="image/webp"><img src="img/anleitung/registrieren-2.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: unteres Ende des Formulars, das Kästchen für die Einwilligung und der Knopf „REGISTRIEREN“ sind markiert."></picture></figure>
+        </li>
+
+        <li class="schritt" data-fall="kontrolle mit">
+          <div class="schritt__text">
+            <h4>„Anmelden“ antippen</h4>
+            <p>CLICKDOC zeigt Ihren Termin und oben den Hinweis „Ihr Termin ist noch nicht vereinbart“. Das ist richtig so. Tippen Sie ganz unten auf das blaue Wort <b class="taste">Anmelden</b>.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/konto-da.webp" type="image/webp"><img src="img/anleitung/konto-da.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: Termindetails, ganz unten ist das Wort „Anmelden“ markiert."></picture></figure>
+        </li>
+
+        <li class="schritt" data-fall="kontrolle mit">
+          <div class="schritt__text">
+            <h4>E-Mail-Adresse und Passwort eintragen</h4>
+            <p>Tragen Sie die E-Mail-Adresse und das Passwort Ihres CLICKDOC-Kontos ein und tippen Sie auf <b class="taste">ANMELDEN</b>.</p>
+            <p class="klein">Passwort nicht mehr im Kopf? Tippen Sie auf „Passwort vergessen?“, CLICKDOC schickt Ihnen eine E-Mail.</p>
+          </div>
+          <figure class="handy"><picture><source srcset="img/anleitung/anmelden.webp" type="image/webp"><img src="img/anleitung/anmelden.jpg" width="585" height="750" loading="lazy" alt="Beispielansicht: Anmeldung bei CLICKDOC mit E-Mail-Adresse und Passwort, der Knopf „ANMELDEN“ ist markiert."></picture></figure>
+        </li>
+
+        <li class="schritt schritt--ohne-bild" data-fall="kontrolle">
+          <div class="schritt__text">
+            <h4>Buchung abschließen</h4>
+            <p>Danach führt CLICKDOC Sie zurück zu Ihrem Termin. Schließen Sie die Buchung dort ab.</p>
+            <p><strong>Zum Termin mitbringen:</strong> Ihre Gesundheitskarte.</p>
+          </div>
+        </li>
+
+        <!-- ===== Mit Überweisung ===== -->
+        <li class="schritt schritt--ohne-bild" data-fall="ueberweisung">
+          <div class="schritt__text">
+            <h4>Den ersten Termin am Telefon vereinbaren</h4>
+            <p>Für die Behandlung einer Parodontitis plant unsere Anmeldung mehr Zeit ein als für eine Kontrolle. Online gibt es bei uns nur die Kontrolluntersuchung, deshalb rufen Sie uns bitte an.</p>
+            <p><a class="knopf" href="tel:+4925521550"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tel"/></svg>02552 1550 anrufen</a></p>
+            <p class="klein" data-status-satz></p>
+          </div>
+        </li>
+        <li class="schritt schritt--ohne-bild" data-fall="ueberweisung">
+          <div class="schritt__text">
+            <h4>Das bringen Sie mit</h4>
+            <ul class="haken">
+              <li>die Überweisung Ihrer Zahnärztin oder Ihres Zahnarztes</li>
+              <li>Ihre Gesundheitskarte</li>
+              <li>eine Liste Ihrer Medikamente</li>
+              <li>Röntgenbilder, wenn Sie welche bekommen haben</li>
+            </ul>
+          </div>
+        </li>
+        <li class="schritt schritt--ohne-bild" data-fall="ueberweisung">
+          <div class="schritt__text">
+            <h4>So geht es nach dem ersten Termin weiter</h4>
+            <p>Die Behandlung läuft in fünf festen Schritten ab, vom Befund bis zur Nachsorge.</p>
+            <p><a class="knopf knopf--hell" href="#ablauf">Ablauf der Behandlung ansehen</a></p>
+          </div>
+        </li>
+
+        <!-- ===== Schmerzen ===== -->
+        <li class="schritt schritt--ohne-bild" data-fall="schmerz">
+          <div class="schritt__text">
+            <h4>Während der Sprechzeiten: bitte anrufen</h4>
+            <p>Sagen Sie am Telefon, dass Sie Schmerzen haben. Die Anmeldung sucht den nächsten freien Termin für Sie.</p>
+            <p><a class="knopf" href="tel:+4925521550"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tel"/></svg>02552 1550 anrufen</a></p>
+            <p class="klein" data-status-satz></p>
+          </div>
+        </li>
+        <li class="schritt schritt--ohne-bild" data-fall="schmerz">
+          <div class="schritt__text">
+            <h4>Außerhalb der Sprechzeiten: zahnärztlicher Notdienst</h4>
+            <p>Die zentrale Nummer nennt Ihnen die Praxis, die gerade Dienst hat.</p>
+            <p><a class="knopf knopf--not" href="tel:+491805986700"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tel"/></svg>01805 98 67 00</a></p>
+            <p class="klein">14 ct/Min. aus dem Festnetz. Oder online: <a href="https://www.zahnaerzte-wl.de/pages/notdienstsuche" rel="noopener">Notdienstsuche der Zahnärztekammer</a>. Bei Lebensgefahr: <a href="tel:112">112</a>.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="quelle" data-fall-quelle hidden>Beispielansichten aus der Online-Buchung der Praxis bei CLICKDOC (CompuGroup Medical), Stand 10.11.2026. Markierungen hinzugefügt. Tage und Uhrzeiten sind Beispiele.</p>
     </div>
   </div>
 </section>
@@ -451,7 +751,7 @@
         </ul>
       </div>
     </div>
-    <p class="fuss__entwurf">Unverbindlicher Entwurf von Leon Oßendorf, kein offizieller Auftritt der Zahnarztpraxis Elberg &amp; Kollegen. Texte, Fotos und Logo stammen von der bisherigen Website der Praxis und gehören der Praxis.</p>
+    <p class="fuss__entwurf">Unverbindlicher Entwurf von Leon Oßendorf, kein offizieller Auftritt der Zahnarztpraxis Elberg &amp; Kollegen. Texte, Fotos und Logo stammen von der bisherigen Website der Praxis und gehören der Praxis. Beispielansichten der Buchung: CLICKDOC (CompuGroup Medical).</p>
   </div>
 </footer>
 
