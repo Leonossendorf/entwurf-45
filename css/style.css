@@ -138,8 +138,12 @@ p{margin:0 0 1rem;max-width:66ch}
 .sonde__regler{margin-top:1rem}
 .sonde__regler label{display:flex;justify-content:space-between;font-weight:700;margin-bottom:.4rem}
 .sonde__regler output{font-family:var(--mono);font-weight:500;color:var(--navy)}
+/* Stufen absolut */
+.sonde__stufen span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.sonde__stufen span:first-child{transform:none}
+.sonde__stufen span:last-child{transform:translateX(-100%)}
 input[type=range]{width:100%;accent-color:var(--navy);height:2.2rem;cursor:pointer}
-.sonde__stufen{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.78rem;color:var(--text2)}
+.sonde__stufen{position:relative;height:1.3rem;margin:0 .6rem;font-family:var(--mono);font-size:.78rem;color:var(--text2)}
 .befund{border-left:4px solid var(--ok);padding:.2rem 0 .2rem 1.1rem;margin:0 0 1.4rem;min-height:9.5rem}
 .befund[data-stufe="2"]{border-color:#C98A1C}
 .befund[data-stufe="3"]{border-color:var(--rose-text)}

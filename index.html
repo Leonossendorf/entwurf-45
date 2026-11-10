@@ -136,7 +136,8 @@
           <!-- Maßlinie -->
           <g font-family="Plex, Consolas, monospace" font-size="12" fill="#4A5864">
             <line x1="236" y1="170" x2="300" y2="170" stroke="#4A5864" stroke-dasharray="3 3"/>
-            <text x="246" y="162">Zahnfleischrand</text>
+            <text x="238" y="132">Zahnfleischrand</text>
+            <line x1="252" y1="137" x2="262" y2="167" stroke="#4A5864"/>
             <line id="mass-linie" x1="292" y1="170" x2="292" y2="214" stroke="#0E2236" stroke-width="1.5"/>
             <line x1="286" y1="170" x2="298" y2="170" stroke="#0E2236" stroke-width="1.5"/>
             <line id="mass-ende" x1="286" y1="214" x2="298" y2="214" stroke="#0E2236" stroke-width="1.5"/>
@@ -148,7 +149,7 @@
         <div class="sonde__regler">
           <label for="tiefe">Messtiefe <output id="tiefe-wert" for="tiefe">2,0 mm</output></label>
           <input type="range" id="tiefe" min="1" max="8" step="0.5" value="2" aria-describedby="befund">
-          <div class="sonde__stufen" aria-hidden="true"><span>1 mm</span><span>3,5</span><span>5,5</span><span>8 mm</span></div>
+          <div class="sonde__stufen" aria-hidden="true"><span style="left:0">1 mm</span><span style="left:35.7%">3,5</span><span style="left:64.3%">5,5</span><span style="left:100%">8 mm</span></div>
         </div>
       </div>
       <div class="sonde__text">
